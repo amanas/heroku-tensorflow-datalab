@@ -35,7 +35,11 @@ $ heroku open
 
 #### `IPYTHON_PASSWORD`
 
-Password used to protect the notebook from unauthorised access.
+Set up the `IPYTHON_PASSWORD` environment variable on Heroku to password protect the notebook from unauthorised access.
+
+```
+$ heroku config:set IPYTHON_PASSWORD=yourpassword
+```
 
 ### Other
 
