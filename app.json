@@ -4,7 +4,7 @@
   "repository": "https://github.com/mietek/instant-ipython",
   "env": {
     "IPYTHON_PASSWORD": {
-      "required": false
+      "required": true
     }
   }
 }
