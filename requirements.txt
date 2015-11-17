@@ -26,3 +26,4 @@ six==1.9.0
 terminado==0.5
 tornado==4.1
 psycopg2==2.6.1
+pgcontents==0.2.1
