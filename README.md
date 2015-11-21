@@ -6,11 +6,10 @@ Instant IPython - Data Analysis
 **Note:**  There is currently no provision for permanent storage.  All data will be lost on server restart.
 
 
-Usage
+Installation
 -----
 
-
-#### Deploying 
+### Heroku app creation
 
 You *must* create a new Heroku app with the buildbpack ["heroku-buildpack-scipy"](https://github.com/thenovices/heroku-buildpack-scipy).
 
@@ -20,32 +19,53 @@ Also, the dependencies have been re-arranged in requirements.txt in such a way t
 $ git clone https://github.com/troyshu/instant-ipython-data-analysis.git
 $ cd instant-ipython-data-analysis
 $ heroku create --buildpack https://github.com/thenovices/heroku-buildpack-scipy
+```
+
+### Configure pgcontents
+
+pgcontents allows persistent storage of ipython notebooks, files, etc. via a PostgreSQL database.
+
+1. Decide on a database for pgcontents to use. If you already have a database attached (e.g. DATABASE_URL), you can use it, although it is recommended that you create a new database for pgcontents so no data is accidentally overwritten.
+
+If you decded to create a new database for pgcontents:
+```
+$ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+2. In "ipython_notebook_config.py", change DATABASE_URL to the appropriate environment variable if the database you decided to use for pgcontents in step 1 is different.
+
+### Configure `IPYTHON_PASSWORD`
+
+Set up the `IPYTHON_PASSWORD` environment variable on Heroku to password protect the notebook from unauthorized access.
+
+```
+$ heroku config:set IPYTHON_PASSWORD=yourpassword
+```
+
+### Deploy
+
+```
 $ git push heroku master
 ```
 
-Ensure the app is running on at least one dyno, and view the app:
+### Finish configuring pgcontents
 
+Open up bash on your app server, and run "pgcontents init" to finish setting up pgcontents. When prompted, enter the url (e.g. postgresql://...) of the database you decided to use for pgcontents in step 1 of "Configure pgcontents". 
+```
+$ heroku run bash
+$ ~$ pgcontents init
+```
+
+### You're done
+
+Ensure the app is running on at least one dyno, and view the app:
 ```
 $ heroku ps:scale web=1
 $ heroku open
 ```
 
 
-### Configuration
-
-#### `IPYTHON_PASSWORD`
-
-Set up the `IPYTHON_PASSWORD` environment variable on Heroku to password protect the notebook from unauthorised access.
-
-```
-$ heroku config:set IPYTHON_PASSWORD=yourpassword
-```
-
-### Other
-
-
-
 About
 -----
 
-Forked and added stats stuff to by [Troy Shu](http://troyshu.com). Original 'instant-ipython' by [Miëtek Bak](https://mietek.io/).  Published under the [MIT X11 license](https://mietek.io/license/).
+Forked, added stats stuff and persistent storage by [Troy Shu](http://troyshu.com). Original 'instant-ipython' by [Miëtek Bak](https://mietek.io/).  Published under the [MIT X11 license](https://mietek.io/license/).
