@@ -15,6 +15,3 @@ c.PostgresContentsManager.db_url = os.environ.get('DATABASE_URL', '')
 # notebooks. By default, we use the result of result of getpass.getuser(), but
 # a username can be specified manually like so:
 c.PostgresContentsManager.user_id = 'default_user'
-
-# Set a maximum file size, if desired.
-c.PostgresContentsManager.max_file_size_bytes = 1000000 # 1MB File cap
