@@ -16,7 +16,7 @@ The dependencies have been re-arranged in requirements.txt in such a way that el
 ```
 $ git clone https://github.com/troyshu/instant-ipython-data-analysis.git
 $ cd instant-ipython-data-analysis
-$ heroku create --buildpack https://github.com/thenovices/heroku-buildpack-scipy
+$ heroku create --buildpack https://github.com/andrewychoi/heroku-buildpack-scipy
 ```
 
 ### Configure pgcontents
