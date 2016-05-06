@@ -69,6 +69,8 @@ About
 BTW: open for new challenges (remote atm)
 
 Added TensorFlow by [Andrés Mañas](https://uk.linkedin.com/in/andresmanas)
+
 Forked,  'instant-ipython-data-analysis' by [Troy Shu](http://troyshu.com). 
+
 Original 'instant-ipython' by [Miëtek Bak](https://mietek.io/).  Published under the [MIT X11 license](https://mietek.io/license/).
 
