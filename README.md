@@ -1,4 +1,4 @@
-IPython datalab with TensorFlow - Data Analysis
+IPython datalab with TensorFlow
 ===============================
 
 [IPython Notebook](http://ipython.org/notebook.html) packaged for Heroku + [pgcontents](https://github.com/quantopian/pgcontents) for persistent file storage. Also includes libraries to get you up and running with data analysis: pandas, statsmodels, scikit-learn, and [ipython-sql](https://github.com/mietek/instant-ipython) to connect to any RDBMS.
