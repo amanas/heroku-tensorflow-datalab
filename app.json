@@ -1,7 +1,7 @@
 {
-  "name": "Instant IPython",
-  "description": "IPython Notebook packaged for Heroku",
-  "repository": "https://github.com/mietek/instant-ipython",
+  "name": "Heroku TensorFlow Datalab",
+  "description": "IPython Datalab with TensorFlow for Heroku - data analysis and machine learning with persistent storage",
+  "repository": "https://github.com/amanas/heroku-tensorflow-datalab",
   "env": {
     "IPYTHON_PASSWORD": {
       "required": true
