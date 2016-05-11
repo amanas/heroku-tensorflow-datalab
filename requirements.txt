@@ -1,13 +1,12 @@
-https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
-git+https://github.com/oanda/oandapy.git
-
-numpy==1.9.2
-scipy==0.15.1
-pandas==0.18.0
-statsmodels==0.6.1
-scikit-learn==0.17.1
+numpy==1.11.0
+scipy==0.17.0
+pandas==0.18.1
+ipython==4.2.0
+notebook==4.2.0
+matplotlib==1.5.1
 ipython-sql==0.3.6
 patsy==0.4.1
+cython==0.24
 
 Jinja2==2.7.3
 MarkupSafe==0.23
@@ -15,9 +14,7 @@ Pygments==2.0.2
 backports.ssl-match-hostname==3.4.0.2
 certifi==2015.4.28
 gnureadline==6.3.3
-ipython==3.2.2
 jsonschema==2.4.0
-matplotlib==1.4.3
 mistune==0.5.1
 mock==1.0.1
 nose==1.3.6
@@ -32,3 +29,8 @@ tornado==4.1
 psycopg2==2.6.1
 pgcontents==0.2.1
 boto==2.38.0
+
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
+git+https://github.com/oanda/oandapy.git
+git+https://github.com/scikit-learn/scikit-learn.git
+
