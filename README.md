@@ -1,7 +1,7 @@
 IPython datalab with TensorFlow
 ===============================
 
-[IPython Notebook](http://ipython.org/notebook.html) packaged for Heroku + [pgcontents](https://github.com/quantopian/pgcontents) for persistent file storage. Also includes libraries to get you up and running with data analysis: pandas, statsmodels, scikit-learn, and [ipython-sql](https://github.com/mietek/instant-ipython) to connect to any RDBMS.
+[IPython Notebook](http://ipython.org/notebook.html) packaged for Heroku + [pgcontents](https://github.com/quantopian/pgcontents) for persistent file storage. Also includes libraries to get you up and running with data analysis: pandas, statsmodels, scikit-learn, Google TensorFlow, and [ipython-sql](https://github.com/mietek/instant-ipython) to connect to any RDBMS.
 
 
 Installation
@@ -11,12 +11,11 @@ Installation
 
 You *must* create a new Heroku app with the buildbpack ["heroku-buildpack-scipy"](https://github.com/thenovices/heroku-buildpack-scipy).
 
-The dependencies have been re-arranged in requirements.txt in such a way that eliminates the ["Fortran" error](http://stackoverflow.com/questions/32341732/no-fortran-heroku-scipy-install) when building on Heroku.
 
 ```
 $ git clone https://github.com/amanas/heroku-tensorflow-datalab.git
 $ cd heroku-tensorflow-datalab
-$ heroku create --buildpack https://github.com/andrewychoi/heroku-buildpack-scipy
+$ heroku create --buildpack heroku/python
 ```
 
 ### Configure pgcontents
@@ -25,7 +24,7 @@ pgcontents allows persistent storage of ipython notebooks, files, etc. via a Pos
 
 1) Decide on a database for pgcontents to use. If you already have a database attached (e.g. DATABASE_URL), you can use it, although it is recommended that you create a new database for pgcontents so no data is accidentally overwritten.
 
-If you decded to create a new database for pgcontents:
+If you decided to create a new database for pgcontents:
 ```
 $ heroku addons:create heroku-postgresql:hobby-dev
 ```
